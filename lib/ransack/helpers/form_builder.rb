@@ -107,7 +107,7 @@ module Ransack
 
       def predicate_select(options = {}, html_options = {})
         options[:compounds] = true if options[:compounds].nil?
-        default = options.delete(:default) || 'eq'
+        default = options.delete(:default) || 'cont'
         keys = options[:compounds] ? Predicate.names : 
           Predicate.names.reject { |k| k.match(/_(any|all)$/) }
         if only = options[:only]
